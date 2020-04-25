@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+  def index
+    redirect_to login_path if !logged_in?
+  end
   def new
   end
   def create
@@ -9,9 +12,7 @@ class SessionsController < ApplicationController
       redirect_to login_path
     end
   end
-  def show
-    redirect_to login_path if !logged_in?
-  end
+
   def destroy
     session.clear
     redirect_to login_path
