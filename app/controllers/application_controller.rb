@@ -6,6 +6,6 @@ class ApplicationController < ActionController::Base
     session[:name]
   end
   def logged_in?
-    session[:name].nil?
+    !session[:name].nil?
   end
 end
