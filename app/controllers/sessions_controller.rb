@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
     end
   end
   def show
+    redirect_to login_path if !logged_in?
   end
   def destroy
     session.clear
